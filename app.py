@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import pandas as pd 
+import pandas as pd
 import pickle
 from PIL import Image 
 def main():
@@ -35,29 +35,27 @@ def main():
         st.image(image,use_column_width=True)
         st.set_option('deprecation.showfileUploaderEncoding', False)#to remove error
         st.subheader("Please Upload Your Dataset")
-        data=st.file_uploader("Upload your dataset",type=['csv','xlsx','txt','json'])
-        if data is not None:
-            df = pd.read_csv(data)
-            st.dataframe(df.head(10))
-            st.success("Data Successfully loaded")
-            model = pickle.load(open("final_model.pkl", "rb"))
+        df = pd.read_csv(st.file_uploader("Upload your dataset",type=['csv','xlsx','txt','json']))
+        st.dataframe(df.head(10))
+        st.success("Data Successfully loaded")
+        model = pickle.load(open("final_model.pkl", "rb"))
 
 
-            def preprocessData(dataFrame):
-                #dataFrame = dataFrame.drop('step','nameOrig','nameDest'],axis = 1)
-                dataFrame = dataFrame.drop(['step','nameOrig','nameDest'],axis=1)
-                x_new = dataFrame
-                x_new = pd.get_dummies(x_new)
-                return x_new
+        def preprocessData(dataFrame):
+            #dataFrame = dataFrame.drop('step','nameOrig','nameDest'],axis = 1)
+            dataFrame = dataFrame.drop(['step','nameOrig','nameDest'],axis=1)
+            x_new = dataFrame
+            x_new = pd.get_dummies(x_new)
+            return x_new
 
-            if st.button("Predict"):
-                st.balloons()
-                x_new = preprocessData(df)
-                df['y_prednew'] = model.predict(x_new)
-                df.to_csv('final_result.csv')
+        if st.button("Predict"):
+            st.balloons()
+            x_new = preprocessData(df)
+            df['y_prednew'] = model.predict(x_new)
+            df.to_csv('final_result.csv')
 
-                st.title("Your Output is")
-                st.dataframe(df)
+            st.title("Your Output is")
+            st.dataframe(df)
 
                 
             
