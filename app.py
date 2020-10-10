@@ -14,7 +14,7 @@ def main():
         """
         st.markdown(html_temp, unsafe_allow_html=True)
         st.title("What is Money Laundering?")
-        image=Image.open('images/1.png')
+        image=Image.open('1.png')
         st.image(image,use_column_width=True)
         st.set_option('deprecation.showfileUploaderEncoding', False)#to remove error
         st.subheader('Money laundering is the illegal process of concealing the origins of money obtained illegally by passing it through a complex sequence of banking transfers or commercial transactions.')
@@ -23,7 +23,7 @@ def main():
         st.subheader('By combining this information with analysis of customers’ historical information and account profile, the software can provide financial institutions with a “whole picture” analysis of a customer’s profile, risk levels, and predicted future activity, and can also generate reports and create alerts to suspicious activity')
         st.title('Our Product')
         st.subheader('Working of the product in a nutshell')
-        image=Image.open('images/2.png')
+        image=Image.open('2.png')
         st.image(image,use_column_width=True)
         st.set_option('deprecation.showfileUploaderEncoding', False)#to remove error
         st.title('The future prospects ')
@@ -31,7 +31,7 @@ def main():
         st.subheader('To make our project self sustainable and ever adapting according to the market scenario, an integration of a simple Artificial neural network will be done to the model created, so that, as datasets become larger, the efficiency does not take a hit, and the model learns from itself, just like all of us. ')
     elif option=='Monitoring System':
         st.title("TRANSACTION MONITORING SYSTEM")
-        image=Image.open('images/Magnify_Monitoring.jpg')
+        image=Image.open('Magnify_Monitoring.jpg')
         st.image(image,use_column_width=True)
         st.set_option('deprecation.showfileUploaderEncoding', False)#to remove error
         st.subheader("Please Upload Your Dataset")
