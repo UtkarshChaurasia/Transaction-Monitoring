@@ -35,7 +35,7 @@ def main():
         st.image(image,use_column_width=True)
         st.set_option('deprecation.showfileUploaderEncoding', False)#to remove error
         st.subheader("Please Upload Your Dataset")
-        data=st.file_uploader("Upload your dataset"),type=['csv'])
+        data=st.file_uploader("Upload your dataset",type=['csv'])
         if data is not None:
             df = pd.read_csv(data)
             st.dataframe(df.head(10))
