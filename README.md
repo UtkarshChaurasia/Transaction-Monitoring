@@ -5,4 +5,4 @@ Money laundering is the illegal process of concealing the origins of money obtai
 
 Anti-money laundering (AML) transaction monitoring software allows banks and other financial institutions to monitor customer transactions on a daily basis or in real-time for risk. Our solution will automate the whole process of detecting a suspected money laundering case.
 
-(ML.png)
+![](ML.png)
